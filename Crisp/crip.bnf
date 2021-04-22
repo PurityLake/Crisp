@@ -1,0 +1,9 @@
+sexp        ::=     atom | "(" SExpression * ")"
+atom        ::=     ident | number | string | char | bool
+ident       ::=     ( ALPHABETIC_CHAR | +-*/<>=!?£$€%^&*@ ) ( ALPHANUMERIC_CHAR | +-*/<>=!?£$€%^&*@ )*
+number      ::=     int | float
+int         ::=     DIGIT+
+float       ::=     DIGIT+ "." DIGIT+
+string      ::=     " (ASCII_CHAR)* "
+char        ::=     ' (ASCII_CHAR) '
+bool		::=		#F | #T
