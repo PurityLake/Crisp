@@ -30,6 +30,7 @@ namespace Crisp
             {
                 sw.WriteLine(k);
             }
+            sw.Flush();
             return Sexp.Void;
         }
         /*****************************************************************
@@ -896,15 +897,15 @@ namespace Crisp
                     }
                     else
                     {
-                        throw new CrispArgumentException("'car' function requires a list of at least length 1", arguments.Line);
+                        return new Sexp();
                     }
                 }
                 else
                 {
-                    throw new CrispArgumentException("'car' function requires a list as it's parameter", arguments.Line);
+                    throw new CrispArgumentException("'cdr' function requires a list as it's parameter", arguments.Line);
                 }
             }
-            throw new CrispArgumentException(String.Format("'car' function requires exactly 1 argument, got {0}", arguments.Length), arguments.Line);
+            throw new CrispArgumentException(String.Format("'cdr' function requires exactly 1 argument, got {0}", arguments.Length), arguments.Line);
         }
 
         /// <summary>

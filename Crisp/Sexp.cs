@@ -176,15 +176,7 @@ namespace Crisp
         {
             get
             {
-                if (Type == SexpType.LIST)
-                {
-                    if (_sexps.Count > start && (start + count < _sexps.Count))
-                    {
-                        return Sexp.FromList(_sexps.GetRange(start, count));
-                    }
-                    throw new CrispException("Internal error: tried to access subset of a non-indexable value with not enough elements", -1);
-                }
-                throw new CrispException("Internal error: tried to access subset of a non-indexable value", -1);
+                return Sexp.FromList(_sexps.GetRange(start, count));
             }
         }
 
